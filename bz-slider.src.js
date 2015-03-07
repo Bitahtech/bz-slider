@@ -7,7 +7,8 @@
         return factory(angular);
     }
 }(angular || null, function(angular) {
-var app = angular.module('bzSlider', []);
+var app = angular.module('bzSlider', ['ngAnimate']);
+
 var bzSliderController = ['$scope', '$timeout', '$parse', function ($scope, $timeout, $parse) {
     var timeOut = null;
 
@@ -54,7 +55,7 @@ app.directive('bzSlider', ['$timeout', '$parse', function ($timeout, $parse) {
         controller: bzSliderController,
         link: function(scope, element, attrs) {
             element.addClass('bz-slider');
-            scope.$slideIndex = 0;
+            scope.$slideIndex = scope.$slideIndex || 0;
             scope.$slides = [];
 
             // watch for slides update

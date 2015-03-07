@@ -6,7 +6,7 @@ app.directive('bzSlider', ['$timeout', '$parse', function ($timeout, $parse) {
         controller: bzSliderController,
         link: function(scope, element, attrs) {
             element.addClass('bz-slider');
-            scope.$slideIndex = 0;
+            scope.$slideIndex = scope.$slideIndex || 0;
             scope.$slides = [];
 
             // watch for slides update
