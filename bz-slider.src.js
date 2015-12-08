@@ -6,7 +6,7 @@
     } else {
         return factory(angular);
     }
-}(angular || null, function(angular) {
+}(window.angular || null, function(angular) {
 var app = angular.module('bzSlider', ['ngAnimate']);
 
 var bzSliderController = ['$scope', '$timeout', '$parse', function ($scope, $timeout, $parse) {
