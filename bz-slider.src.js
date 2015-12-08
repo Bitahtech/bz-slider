@@ -1,12 +1,6 @@
 (function(angular, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define('bzSlider', ['angular'], function($, angular) {
-            return factory(angular);
-        });
-    } else {
-        return factory(angular);
-    }
-}(window.angular || null, function(angular) {
+    return factory(angular);
+}(window.angular || (typeof require === 'function' && require('angular')), function(angular) {
 var app = angular.module('bzSlider', ['ngAnimate']);
 
 var bzSliderController = ['$scope', '$timeout', '$parse', function ($scope, $timeout, $parse) {
